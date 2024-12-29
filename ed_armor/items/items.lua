@@ -1,38 +1,23 @@
 ['light_armor'] = {
-    label = 'Armure légère',
+    label = 'Light Armor',
     weight = 500,
     stack = true,
     close = true,
-    description = 'Armure légère qui donne 50 points d\'armure',
-    client = {
-        add = function(item)
-            item.metadata.armorValue = 50
-        end,
-    },
-}
+    description = 'Light armor that provides 50 armor points',
+},
 
 ['medium_armor'] = {
-    label = 'Armure moyenne',
+    label = 'Medium Armor',
     weight = 1000,
     stack = true,
     close = true,
-    description = 'Armure moyenne qui donne 75 points d\'armure',
-    client = {
-        add = function(item)
-            item.metadata.armorValue = 75
-        end,
-    },
-}
+    description = 'Medium armor that provides 75 armor points',
+},
 
 ['heavy_armor'] = {
-    label = 'Armure lourde',
+    label = 'Heavy Armor',
     weight = 1500,
     stack = true,
     close = true,
-    description = 'Armure lourde qui donne 100 points d\'armure',
-    client = {
-        add = function(item)
-            item.metadata.armorValue = 100
-        end,
-    },
-}
+    description = 'Heavy armor that provides 100 armor points',
+},
