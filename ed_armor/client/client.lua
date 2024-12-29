@@ -102,12 +102,14 @@ local function AddArmor(item, armor)
     end
 end
 
--- Parcourir automatiquement tous les types d'armure définis dans la configuration
-for armorType, config in pairs(Config) do
-    -- Vérifier si l'élément de configuration est un type d'armure valide
-    if type(config) == "table" and config.nameitem and config.level then
-        exports(config.nameitem, function(data, slot)
-            AddArmor(config.nameitem, config.level)
-        end)
+-- Fonction d'écoute de l'utilisation d'un item avec ox_inventory
+AddEventHandler('ox_inventory:usedItem', function(itemName, slotId, metadata)
+    -- Vérifier si l'item utilisé est un item d'armure
+    if itemName == 'light_armor' then
+        AddArmor(itemName, Config.LightArmor.level)
+    elseif itemName == 'medium_armor' then
+        AddArmor(itemName, Config.MediumArmor.level)
+    elseif itemName == 'heavy_armor' then
+        AddArmor(itemName, Config.HeavyArmor.level)
     end
-end
+end)
